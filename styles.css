@@ -1,0 +1,367 @@
+body {
+    font-family: "Inter", sans-serif;
+    background-color: #f8f9fa;
+}
+/* Header */
+.project-name {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0;
+}
+.nav-link {
+    color: #000;
+    font-size: 22px;
+}
+.nav-link.active {
+    border-bottom: 2px solid #000;
+}
+/* Sidebar */
+.sidebar {
+    padding: 20px;
+}
+.sidebar h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.enter-link {
+    float: right;
+    font-size: 14px;
+    color: #007bff;
+    text-decoration: none;
+}
+.add-btn {
+    width: 100%;
+    margin-bottom: 15px;
+    background-color: #f1f3f5;
+    border: 1px solid #ddd;
+    color: #000;
+}
+.list-group-item {
+    border: none;
+    padding: 10px 0;
+    font-size: 14px;
+}
+.badge {
+    font-size: 12px;
+}
+/* Photos Section */
+.photos-section {
+    padding: 20px;
+}
+.photos-section h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.card {
+    border: none;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #F9FAFB;
+}
+.card-img-top {
+    width: 100%;
+    object-fit: cover;
+}
+.card-body {
+    padding: 10px 0;
+}
+.card-text {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+/* Layout Section */
+.layout-section {
+    margin-top: 30px;
+}
+.layout-section h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+.layout-section .card-text small {
+    color: #6c757d;
+    font-size: 12px;
+}
+/* Surfaces Section */
+.surfaces-section {
+    padding: 20px;
+    border-left: 1px solid #ddd;
+}
+
+.surfaces-section h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.list-group-item {
+    border: none;
+    padding: 10px 0;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.surface-name {
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+}
+
+.list-group-item i.fa-ellipsis-v {
+    font-size: 14px;
+    color: #6c757d;
+}
+/* Modal Styling */
+.modal-content {
+    border-radius: 10px;
+}
+.modal-header {
+    border-bottom: none;
+}
+.modal-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+.modal-footer {
+    border-top: none;
+    justify-content: flex-end;
+}
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 20px;
+}
+/* Tags Styling */
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.tag {
+    background-color: #e9ecef;
+    border-radius: 15px;
+    padding: 5px 10px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.tag i {
+    cursor: pointer;
+    color: #6c757d;
+}
+.tag-input {
+    flex: 1;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+    outline: none;
+}
+/* Modal for Add Image */
+.modal-body p {
+    font-size: 14px;
+    color: #6c757d;
+    margin-bottom: 20px;
+}
+#imagePreviewContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+.image-preview {
+    position: relative;
+    display: flex;
+    height: 100px;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.image-preview img {
+    max-width: 100px;
+    height: auto;
+    border-radius: 5px;
+}
+.image-preview .remove-btn {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #fff;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+.image-preview .remove-btn i {
+    font-size: 12px;
+    color: #6c757d;
+}
+.image-preview p {
+    font-size: 14px;
+    margin: 5px 0 0 0;
+}
+.select-image-btn {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 8px 15px;
+}
+.modal-footer .btn-light {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 8px 20px;
+}
+/* Add Image Button Styling */
+.add-image-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: none;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+.icon-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #e6f0fa;
+    border-radius: 50%;
+    margin-bottom: 5px;
+}
+.icon-circle i {
+    font-size: 16px;
+    color: #000;
+}
+.add-image-text {
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+}
+.add-image-btn:hover .icon-circle {
+    background-color: #d0e4f5;
+}
+/* Add Image Button Styling */
+.add-image-card {
+    background-color: #F9FAFB;
+}
+.add-image-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: none;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+.icon-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #e6f0fa;
+    border-radius: 50%;
+    margin-bottom: 5px;
+}
+.icon-circle i {
+    font-size: 16px;
+    color: #000;
+}
+.add-image-text {
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+}
+.add-image-btn:hover .icon-circle {
+    background-color: #d0e4f5;
+}
+.card-layout{
+    border: 1px dotted #ccc;
+}
+/* Add Collection Button Styling */
+.add-collection-btn {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.add-collection-btn:hover {
+    background-color: #f8f9fa;
+}
+.icon-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background-color: #e6f0fa;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.icon-circle i {
+    font-size: 14px;
+    color: #000;
+}
+.add-collection-text {
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+}
+/* Collection List Styling */
+.list-group-item {
+    border: none;
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+.collection-icon {
+    font-size: 20px;
+    margin-right: 10px;
+    color: #000;
+}
+.collection-thumbnail {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+.collection-info {
+    display: flex;
+    flex-direction: column;
+}
+.collection-name {
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+}
+.collection-items {
+    font-size: 12px;
+    color: #6c757d;
+}
+.list-group-item i.fa-ellipsis-v {
+    font-size: 14px;
+    color: #6c757d;
+    position: absolute;
+    top: 9px;
+    right: 9px;
+}
