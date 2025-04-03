@@ -368,3 +368,64 @@ body {
     top: 9px;
     right: 9px;
 }
+
+#surfaceModal .modal-content {
+    border-radius: 10px;
+    padding: 20px;
+}
+#surfaceModal .modal-header {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+#surfaceModal .modal-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+#surfaceModal .modal-body {
+    padding-top: 0;
+}
+#surfaceModal .form-label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+#surfaceModal .form-control {
+    border: none;
+    border-bottom: 1px solid #333;
+    border-radius: 0;
+    padding: 5px 0;
+    font-size: 14px;
+}
+#surfaceModal .form-control:focus {
+    box-shadow: none;
+    border-bottom: 1px solid #333;
+}
+#surfaceModal .input-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+#surfaceModal .input-group-text {
+    background: none;
+    border: none;
+    font-size: 14px;
+    padding: 0;
+}
+#surfaceModal .modal-footer {
+    border-top: none;
+    justify-content: center;
+}
+#surfaceModal .btn-save {
+    width: 100%;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+#surfaceModal .btn-save:hover {
+    background-color: #e0e0e0;
+}
