@@ -54,6 +54,10 @@ body {
     font-weight: bold;
     margin-bottom: 15px;
 }
+
+.photos-section .img-home{
+    height: 164px;
+}
 .card {
     border: none;
     padding: 15px;
