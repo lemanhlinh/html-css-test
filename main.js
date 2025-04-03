@@ -124,7 +124,7 @@ surfaceModal.addEventListener('show.bs.modal', function (event) {
         surfaceNameInput.value = '';
         surfaceWidthInput.value = '';
         surfaceHeightInput.value = '';
-        currentIndex = null; // Không có chỉ số khi thêm mới
+        currentIndex = null;
     } else if (action === 'edit') {
         // Sửa surface
         modalTitle.textContent = 'EDIT SURFACE';
@@ -176,10 +176,10 @@ document.getElementById('saveSurface').addEventListener('click', function () {
             surfaceItem.querySelector('span').textContent = surfaceName;
         }
 
-        // Đóng modal
+        // Close modal
         const modal = bootstrap.Modal.getInstance(surfaceModal);
         modal.hide();
     } else {
-        alert('Vui lòng điền đầy đủ thông tin!');
+        alert('Please fill in all information!');
     }
 });
