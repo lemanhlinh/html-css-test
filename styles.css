@@ -333,7 +333,7 @@ body {
 /* Collection List Styling */
 .list-group-item {
     border: none;
-    padding: 10px 0;
+    padding: 12px 0;
     font-size: 16px;
     font-weight: 600;
     display: flex;
@@ -488,4 +488,26 @@ body {
 
 .overflow-hidden {
     overflow: hidden;
+}
+
+.header-logo {
+    margin-top: 1rem;
+}
+.navbar-collapse{
+    display: none;
+}
+
+@media (max-width: 767.98px) {
+    .header-logo {
+        border-top: none;
+    }
+    .navbar-nav {
+        text-align: center;
+    }
+}
+
+@media (min-width: 767.98px) {
+    .header .navbar-collapse{
+        display: none !important;
+    }
 }
