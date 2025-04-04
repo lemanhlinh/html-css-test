@@ -23,6 +23,8 @@ body {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
 }
 .enter-link {
     float: right;
@@ -100,6 +102,8 @@ body {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .list-group-item {
