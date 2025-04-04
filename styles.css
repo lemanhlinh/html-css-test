@@ -482,6 +482,7 @@ body {
     max-height: 357px;
     transition: max-height 0.3s ease;
 }
+
 .photos-section.expanded, .surfaces-section.expanded {
     max-height: 1000px; /* hoặc auto nếu bạn dùng JS để xử lý chính xác */
 }
@@ -500,6 +501,10 @@ body {
     }
     .navbar-nav {
         text-align: center;
+    }
+
+    .photos-section, .surfaces-section {
+        max-height: 482px;
     }
 }
 
