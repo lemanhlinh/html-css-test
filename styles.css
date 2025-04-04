@@ -493,9 +493,6 @@ body {
 .header-logo {
     margin-top: 1rem;
 }
-.navbar-collapse{
-    display: none;
-}
 
 @media (max-width: 767.98px) {
     .header-logo {
