@@ -113,19 +113,19 @@
         <!-- Main Content: Photos and Surfaces -->
         <div class="col-md-7">
             <!-- Photos Section -->
-            <div class="photos-section bg-white rounded">
-                <h2>Photos <a href="#" class="enter-link">Enter</a></h2>
+            <div class="photos-section bg-white rounded overflow-hidden">
+                <h2>Photos <button class="btn enter-link" id="toggleButton">Enter</button></h2>
                 <div class="row g-3" id="photosContainer">
-                    <div class="col-md-3 d-flex">
-                        <div class="card shadow-sm add-image-card w-100 justify-content-center">
+                    <div class="col-md-3 d-flex photo-item">
+                        <div class="card shadow-sm photo-card add-image-card w-100 justify-content-center">
                             <button class="add-image-btn" data-bs-toggle="modal" data-bs-target="#addImageModal">
                                 <span class="icon-circle"><i class="fas fa-plus"></i></span>
                                 <span class="add-image-text">Add Image</span>
                             </button>
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="card shadow-sm">
+                    <div class="col-md-3 photo-item">
+                        <div class="card shadow-sm photo-card">
                             <div class="overflow-hidden img-home"><img src="images/image-357.jpg" class="card-img-top img-fluid" alt="Living Room 1"></div>
                             <div class="card-body d-flex justify-content-between align-items-center">
                                 <p class="card-text">Living Room 1</p>
@@ -140,8 +140,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="card shadow-sm">
+                    <div class="col-md-3 photo-item">
+                        <div class="card shadow-sm photo-card">
                             <div class="overflow-hidden img-home"><img src="images/image-357.jpg" class="card-img-top img-fluid" alt="Living Room 2"></div>
                             <div class="card-body d-flex justify-content-between align-items-center">
                                 <p class="card-text">Living Room 1</p>
@@ -156,8 +156,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="card shadow-sm">
+                    <div class="col-md-3 photo-item">
+                        <div class="card shadow-sm photo-card">
                             <div class="overflow-hidden img-home"><img src="images/image-357.jpg" class="card-img-top img-fluid" alt="Living Room 3"></div>
                             <div class="card-body d-flex justify-content-between align-items-center">
                                 <p class="card-text">Living Room 1</p>
@@ -172,8 +172,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="card shadow-sm">
+                    <div class="col-md-3 photo-item">
+                        <div class="card shadow-sm photo-card">
                             <div class="overflow-hidden img-home"><img src="images/image-357.jpg" class="card-img-top img-fluid" alt="Living Room 4"></div>
                             <div class="card-body d-flex justify-content-between align-items-center">
                                 <p class="card-text">Living Room 1</p>
@@ -194,17 +194,17 @@
 
         <!-- Surfaces Section -->
         <div class="col-md-3">
-            <div class="surfaces-section bg-white rounded">
-                <h2>Surfaces <a href="#" class="enter-link">Enter</a></h2>
+            <div class="surfaces-section bg-white rounded overflow-hidden">
+                <h2>Surfaces <button class="btn enter-link" id="toggleButtonSurfaces">Enter</button></h2>
 
                 <ul class="list-group">
-                    <li class="list-group-item d-flex justify-content-center align-items-center card">
+                    <li class="list-group-item d-flex justify-content-center align-items-center card surface-item">
                         <button class="add-image-btn" data-bs-toggle="modal" data-bs-target="#surfaceModal" data-action="add">
                             <span class="icon-circle"><i class="fas fa-plus"></i></span>
                             <span class="add-image-text">Add Surface</span>
                         </button>
                     </li>
-                    <li class="list-group-item d-flex justify-content-center align-items-center card" data-name="North Wall" data-width="600" data-height="300">
+                    <li class="list-group-item d-flex justify-content-center align-items-center card surface-item" data-name="North Wall" data-width="600" data-height="300">
                         <span class="surface-name">North Wall</span>
                         <div class="dropdown position-absolute top-0 end-0">
                             <button class="btn btn-link" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -216,7 +216,7 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="list-group-item d-flex justify-content-center align-items-center card" data-name="North Wall" data-width="500" data-height="200">
+                    <li class="list-group-item d-flex justify-content-center align-items-center card surface-item" data-name="North Wall" data-width="500" data-height="200">
                         <span class="surface-name">North Wall</span>
                         <div class="dropdown position-absolute top-0 end-0">
                             <button class="btn btn-link" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -228,7 +228,7 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="list-group-item d-flex justify-content-center align-items-center card" data-name="North Wall" data-width="700" data-height="300">
+                    <li class="list-group-item d-flex justify-content-center align-items-center card surface-item" data-name="North Wall" data-width="700" data-height="300">
                         <span class="surface-name">North Wall</span>
                         <div class="dropdown position-absolute top-0 end-0">
                             <button class="btn btn-link" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -249,39 +249,47 @@
     <div class="layout-section">
         <h2>Layout 1</h2>
         <div class="row g-3">
-            <div class="col-md-3">
+            <div class="col-md-3 layout-item">
                 <div class="card shadow-sm bg-white">
                     <img src="images/image-500.jpg" class="card-img-top img-fluid" alt="Living Room 1">
                     <div class="card-body d-flex justify-content-between align-items-end">
-                        <p class="card-text">Living Room 1 <br> <small>Created: June 19th, 2024</small></p>
-                        <a href="#" class="enter-link">Enter</a>
+                        <p class="card-text"><span>Living Room 1</span> <br> <small>Created: June 19th, 2024</small></p>
+                        <button type="button" class="btn enter-link" data-bs-toggle="modal" data-bs-target="#imageModal" data-title="Living Room 1" data-image="images/image-500.jpg">
+                            Enter
+                        </button>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 layout-item">
                 <div class="card shadow-sm bg-white">
                     <img src="images/image-500.jpg" class="card-img-top img-fluid" alt="Living Room 2">
                     <div class="card-body d-flex justify-content-between align-items-end">
-                        <p class="card-text">Living Room 2 <br> <small>Created: June 19th, 2024</small></p>
-                        <a href="#" class="enter-link">Enter</a>
+                        <p class="card-text"><span>Living Room 2</span> <br> <small>Created: June 19th, 2024</small></p>
+                        <button type="button" class="btn enter-link" data-bs-toggle="modal" data-bs-target="#imageModal" data-title="Living Room 2" data-image="images/image-500.jpg">
+                            Enter
+                        </button>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 layout-item">
                 <div class="card shadow-sm bg-white">
                     <img src="images/image-500.jpg" class="card-img-top img-fluid" alt="Living Room 3">
                     <div class="card-body d-flex justify-content-between align-items-end">
-                        <p class="card-text">Living Room 3 <br> <small>Created: June 19th, 2024</small></p>
-                        <a href="#" class="enter-link">Enter</a>
+                        <p class="card-text"><span>Living Room 3</span> <br> <small>Created: June 19th, 2024</small></p>
+                        <button type="button" class="btn enter-link" data-bs-toggle="modal" data-bs-target="#imageModal" data-title="Living Room 3" data-image="images/image-500.jpg">
+                            Enter
+                        </button>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 layout-item">
                 <div class="card shadow-sm bg-white">
                     <img src="images/image-500.jpg" class="card-img-top img-fluid" alt="Living Room 4">
                     <div class="card-body d-flex justify-content-between align-items-end">
-                        <p class="card-text">Living Room 4 <br> <small>Created: June 19th, 2024</small></p>
-                        <a href="#" class="enter-link">Enter</a>
+                        <p class="card-text"><span>Living Room 4</span> <br> <small>Created: June 19th, 2024</small></p>
+                        <button type="button" class="btn enter-link" data-bs-toggle="modal" data-bs-target="#imageModal" data-title="Living Room 4" data-image="images/image-500.jpg">
+                            Enter
+                        </button>
                     </div>
                 </div>
             </div>
@@ -292,7 +300,7 @@
     <div class="layout-section">
         <h2>Layout 2</h2>
         <div class="row g-3">
-            <div class="col-md-3">
+            <div class="col-md-3 layout-item">
                 <div class="card bg-white card-layout">
                     <button class="add-image-btn">
                         <span class="icon-circle"><i class="fas fa-plus"></i></span>
@@ -397,6 +405,35 @@
             </div>
             <div class="modal-footer">
                 <button type="button" id="saveSurface" class="btn btn-light w-100" data-bs-dismiss="modal">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="imageModalLabel">IMAGE TITLE (EDITABLE)</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="mb-3">
+                            <textarea name="" id="textareaModal" rows="5" class="form-control w-100 text-start">Add new surface North wall West wall</textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="modal-footer">
+                            <button type="button" id="saveLayout" class="btn btn-light" data-bs-dismiss="modal">Save</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <img src="images/7.jpg" class="img-fluid modal-image" alt="Hình ảnh trong modal">
+                </div>
             </div>
         </div>
     </div>

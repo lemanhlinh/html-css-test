@@ -29,6 +29,7 @@ body {
     font-size: 14px;
     color: #007bff;
     text-decoration: none;
+    font-weight: bold;
 }
 .add-btn {
     width: 100%;
@@ -53,6 +54,8 @@ body {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .photos-section .img-home{
@@ -428,4 +431,61 @@ body {
 }
 #surfaceModal .btn-save:hover {
     background-color: #e0e0e0;
+}
+
+#imageModal .modal-content {
+    border-radius: 10px; /* Bo góc nhẹ */
+}
+
+#imageModal .modal-header {
+    border-bottom: none; /* Bỏ đường viền dưới của header */
+    padding: 10px 20px; /* Giảm padding */
+}
+
+#imageModal .modal-title {
+    font-size: 16px; /* Kích thước chữ tiêu đề */
+    font-weight: bold;
+    color: #333; /* Màu chữ tiêu đề */
+}
+
+#imageModal .modal-body img {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+#imageModal .modal-footer {
+    border-top: none;
+    padding: 0;
+}
+
+#imageModal .btn-primary {
+    background-color: #f0f0f0;
+    color: #333;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+#imageModal .btn-primary:hover {
+    background-color: #e0e0e0;
+}
+
+#imageModal .modal-body {
+    padding: 20px;
+}
+
+.photos-section, .surfaces-section {
+    max-height: 357px;
+    transition: max-height 0.3s ease;
+}
+.photos-section.expanded, .surfaces-section.expanded {
+    max-height: 1000px; /* hoặc auto nếu bạn dùng JS để xử lý chính xác */
+}
+
+.overflow-hidden {
+    overflow: hidden;
 }

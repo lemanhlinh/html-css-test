@@ -43,9 +43,9 @@ function saveImages() {
 
     selectedImages.forEach(image => {
         const colDiv = document.createElement('div');
-        colDiv.classList.add('col-md-3');
+        colDiv.classList.add('col-md-3', 'photo-item');
         colDiv.innerHTML = `
-                <div class="card shadow-sm">
+                <div class="card shadow-sm photo-card">
                     <div class="overflow-hidden img-home">
                         <img src="${image.src}" class="card-img-top img-fluid" alt="${image.name}">
                     </div>
@@ -150,7 +150,7 @@ document.getElementById('saveSurface').addEventListener('click', function () {
             // Thêm mới surface
             const surfaceList = document.querySelector('.surfaces-section .list-group');
             const newSurface = document.createElement('li');
-            newSurface.className = 'list-group-item d-flex justify-content-between align-items-center card';
+            newSurface.className = 'list-group-item d-flex justify-content-between align-items-center card surface-item';
             newSurface.setAttribute('data-name', surfaceName);
             newSurface.setAttribute('data-width', surfaceWidth);
             newSurface.setAttribute('data-height', surfaceHeight);
@@ -182,4 +182,65 @@ document.getElementById('saveSurface').addEventListener('click', function () {
     } else {
         alert('Please fill in all information!');
     }
+});
+
+const surfaceModalImage = document.getElementById('imageModal');
+let currentIndexImage = null;
+
+surfaceModalImage.addEventListener('show.bs.modal', function (event) {
+    const button = event.relatedTarget;
+
+    const title = button.getAttribute('data-title');
+    const image = button.getAttribute('data-image');
+
+    const modalTitle = this.querySelector('#imageModalLabel');
+    const modalTextTitle = this.querySelector('#textareaModal');
+    modalTitle.textContent = title;
+    modalTextTitle.value = title;
+
+    const imageItem = button.closest('.layout-item');
+
+    currentIndexImage = Array.from(document.querySelectorAll('.layout-item')).indexOf(imageItem);
+    const modalImage = this.querySelector('.modal-image');
+    modalImage.src = image;
+});
+
+
+
+document.getElementById('saveLayout').addEventListener('click', function () {
+    const textareaModal = document.getElementById('textareaModal').value;
+
+    if (textareaModal) {
+        const surfaceItem = document.querySelectorAll('.layout-item')[currentIndexImage];
+        const enterLink = surfaceItem.querySelector('.enter-link');
+        const span = surfaceItem.querySelector('span');
+
+        if (enterLink) {
+            enterLink.setAttribute('data-title', textareaModal);
+        }
+
+        if (span) {
+            span.textContent = textareaModal;
+        }
+
+        // Close modal
+        const modal = bootstrap.Modal.getInstance(surfaceModalImage);
+        modal.hide();
+    } else {
+        alert('Please fill in all information!');
+    }
+});
+
+document.getElementById('toggleButton').addEventListener('click', function() {
+    const photosSection = document.querySelector('.photos-section');
+
+    photosSection.classList.toggle('overflow-hidden');
+    photosSection.classList.toggle('expanded');
+});
+
+document.getElementById('toggleButtonSurfaces').addEventListener('click', function() {
+    const photosSection = document.querySelector('.surfaces-section');
+
+    photosSection.classList.toggle('overflow-hidden');
+    photosSection.classList.toggle('expanded');
 });
