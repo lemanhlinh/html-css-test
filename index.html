@@ -456,13 +456,14 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="imageModalLabel">IMAGE TITLE (EDITABLE)</h5>
+                <h5 class="modal-title" id="imageModalLabel">IMAGE TITLE</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <div class="row">
                     <div class="col-md-7">
                         <div class="mb-3">
+                            <input type="text" class="form-control mb-2" id="titleImage" placeholder="Image Title">
                             <textarea name="" id="textareaModal" rows="5" class="form-control w-100 text-start">Add new surface North wall West wall</textarea>
                         </div>
                     </div>
@@ -473,7 +474,15 @@
                     </div>
                 </div>
                 <div class="text-center">
-                    <img src="images/7.jpg" class="img-fluid modal-image" alt="Hình ảnh trong modal">
+                    <div class="image-container">
+                        <img src="images/7.jpg" class="img-fluid modal-image" id="modalImage" alt="Hình ảnh trong modal">
+                        <div id="rectangle" class="rectangle">
+                            <div class="dot top-left"></div>
+                            <div class="dot top-right"></div>
+                            <div class="dot bottom-left"></div>
+                            <div class="dot bottom-right"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -194,9 +194,11 @@ surfaceModalImage.addEventListener('show.bs.modal', function (event) {
     const image = button.getAttribute('data-image');
 
     const modalTitle = this.querySelector('#imageModalLabel');
-    const modalTextTitle = this.querySelector('#textareaModal');
+    const titleImage = this.querySelector('#titleImage');
+    // const modalTextTitle = this.querySelector('#textareaModal');
     modalTitle.textContent = title;
-    modalTextTitle.value = title;
+    titleImage.value = title;
+    // modalTextTitle.value = title;
 
     const imageItem = button.closest('.layout-item');
 
@@ -208,19 +210,19 @@ surfaceModalImage.addEventListener('show.bs.modal', function (event) {
 
 
 document.getElementById('saveLayout').addEventListener('click', function () {
-    const textareaModal = document.getElementById('textareaModal').value;
+    const titleImage = document.getElementById('titleImage').value;
 
-    if (textareaModal) {
+    if (titleImage) {
         const surfaceItem = document.querySelectorAll('.layout-item')[currentIndexImage];
         const enterLink = surfaceItem.querySelector('.enter-link');
         const span = surfaceItem.querySelector('span');
 
         if (enterLink) {
-            enterLink.setAttribute('data-title', textareaModal);
+            enterLink.setAttribute('data-title', titleImage);
         }
 
         if (span) {
-            span.textContent = textareaModal;
+            span.textContent = titleImage;
         }
 
         // Close modal
@@ -243,4 +245,59 @@ document.getElementById('toggleButtonSurfaces').addEventListener('click', functi
 
     photosSection.classList.toggle('overflow-hidden');
     photosSection.classList.toggle('expanded');
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const modalImage = document.getElementById('modalImage');
+    const rectangle = document.getElementById('rectangle');
+    const modal = document.getElementById('imageModal');
+
+    // Khi modal đóng, ẩn hình vuông
+    modal.addEventListener('hidden.bs.modal', () => {
+        rectangle.style.display = 'none';
+    });
+
+    // Nhấp vào ảnh
+    modalImage.addEventListener('click', (e) => {
+        // Lấy kích thước hiển thị của ảnh
+        const rect = modalImage.getBoundingClientRect();
+        const imageWidth = rect.width; // Chiều rộng ảnh trong pixel
+        console.log(imageWidth);
+        const imageHeight = rect.height; // Chiều cao ảnh trong pixel
+
+        // Giả sử ảnh gốc là 100cm, tính tỷ lệ cm-to-px
+        const cmToPxRatio = 100; // 1cm = ?px
+        const squareSize = 100; // Kích thước hình vuông (100cm) trong pixel
+
+        // Tính tọa độ nhấp chuột tương đối với ảnh
+        const clickXInImage = e.clientX - rect.left; // Tọa độ X trong ảnh
+        const clickYInImage = e.clientY - rect.top;  // Tọa độ Y trong ảnh
+
+        // Đặt vị trí cho hình vuông (căn giữa điểm nhấp chuột)
+        const rectX = clickXInImage - squareSize / 2;
+        const rectY = clickYInImage - squareSize / 2;
+
+        // Đặt kích thước và vị trí cho hình vuông
+        rectangle.style.width = `${squareSize}px`;
+        rectangle.style.height = `${squareSize}px`;
+        rectangle.style.left = `${rectX}px`;
+        rectangle.style.top = `${rectY}px`;
+
+        // Tính toán hiệu ứng zoom
+        const zoomLevel = 2; // Phóng to 2x (có thể điều chỉnh)
+        const zoomedImageWidth = imageWidth * zoomLevel;
+        const zoomedImageHeight = imageHeight * zoomLevel;
+
+        // Đặt background-image và background-size cho hình vuông
+        rectangle.style.backgroundImage = `url(${modalImage.src})`;
+        rectangle.style.backgroundSize = `${zoomedImageWidth}px ${zoomedImageHeight}px`;
+
+        // Tính background-position để hiển thị khu vực zoom
+        const bgPosX = clickXInImage * zoomLevel - squareSize / 2;
+        const bgPosY = clickYInImage * zoomLevel - squareSize / 2;
+        rectangle.style.backgroundPosition = `-${bgPosX}px -${bgPosY}px`;
+
+        // Hiển thị hình vuông
+        rectangle.style.display = 'block';
+    });
 });
